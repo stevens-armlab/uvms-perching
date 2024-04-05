@@ -1,0 +1,863 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<model name="four_bar_sdf">
+<pose>0 0 0 0 0 0</pose>
+<self_collide>true</self_collide>
+<link name="linkROV">
+<pose>-0.2286 0 0 0 0 0</pose>
+<inertial>
+<mass>1.0</mass>
+<inertia>
+<ixx>0.0227</ixx>
+<iyy>0.0306</iyy>
+<izz>0.0269</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="linkROV_collision">
+<geometry>
+<box>
+<size>0.4572 0.33805 0.39785</size>
+</box>
+</geometry>
+</collision>
+<visual name="linkROV_visual">
+<geometry>
+<box>
+<size>0.4572 0.33805 0.39785</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link1">
+<pose>0.05750000 0.10000000 -0.10000000 -0.78452674 -0.00000000 0.00000000 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link1_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link1_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link2">
+<pose>0.18499151 0.09922836 -0.09922971 -0.78446608 -0.01100443 -0.01102429 </pose>
+<inertial>
+<mass>0.700</mass>
+<inertia>
+<ixx>4.6667e-05</ixx>
+<iyy>1.1667e-03</iyy>
+<izz>1.1667e-03</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link2_collision">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link2_visual">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link3">
+<pose>0.24999765 0.13899754 -0.13892963 0.08633594 0.78077460 1.69315364 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link3_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link3_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link4">
+<pose>0.24067718 0.21479123 -0.21459134 0.08641811 0.78077460 1.69315364 </pose>
+<inertial>
+<mass>0.500</mass>
+<inertia>
+<ixx>3.3333e-05</ixx>
+<iyy>4.3333e-04</iyy>
+<izz>4.3333e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link4_collision">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link4_visual">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link5">
+<pose>0.29384207 0.25004847 -0.24979384 -0.78453385 0.00019129 0.00007574 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link5_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link5_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm1link6">
+<pose>0.41134207 0.25005737 -0.24981631 -0.00009510 0.00019129 0.00007574 </pose>
+<inertial>
+<mass>0.600</mass>
+<inertia>
+<ixx>4.0000e-05</ixx>
+<iyy>7.4000e-04</iyy>
+<izz>7.4000e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm1link6_collision">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm1link6_visual">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link1">
+<pose>0.05750000 -0.10000000 -0.10000000 -2.60230000 0.00000000 0.00000000 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link1_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link1_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link2">
+<pose>0.17335000 -0.13318000 -0.11986000 -2.67880000 0.28765000 -0.51705000 </pose>
+<inertial>
+<mass>0.700</mass>
+<inertia>
+<ixx>4.6667e-05</ixx>
+<iyy>1.1667e-03</iyy>
+<izz>1.1667e-03</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link2_collision">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link2_visual">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link3">
+<pose>0.23285000 -0.21569000 -0.16924000 -3.12960000 0.53920000 -1.54750000 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link3_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link3_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link4">
+<pose>0.23500000 -0.30791000 -0.22444000 -3.12940000 0.53920000 -1.54750000 </pose>
+<inertial>
+<mass>0.500</mass>
+<inertia>
+<ixx>3.3333e-05</ixx>
+<iyy>4.3333e-04</iyy>
+<izz>4.3333e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link4_collision">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link4_visual">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link5">
+<pose>0.29350000 -0.35078000 -0.25008000 -2.60230000 -0.00055858 0.00050968 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link5_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link5_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm2link6">
+<pose>0.41100000 -0.35072000 -0.25001000 0.00032791 -0.00055858 0.00050968 </pose>
+<inertial>
+<mass>0.600</mass>
+<inertia>
+<ixx>4.0000e-05</ixx>
+<iyy>7.4000e-04</iyy>
+<izz>7.4000e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm2link6_collision">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm2link6_visual">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link1">
+<pose>0.05750000 0.00000000 0.14142000 -1.13840000 0.00000000 0.00000000 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link1_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link1_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link2">
+<pose>0.06845700 -0.02191200 0.18889000 0.96397000 -0.74527000 -2.70160000 </pose>
+<inertial>
+<mass>0.700</mass>
+<inertia>
+<ixx>4.6667e-05</ixx>
+<iyy>1.1667e-03</iyy>
+<izz>1.1667e-03</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link2_collision">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link2_visual">
+<geometry>
+<box>
+<size>0.140 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link3">
+<pose>0.07927600 -0.04548400 0.23996000 -1.13740000 -0.06259900 -0.02893600 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link3_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link3_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link4">
+<pose>0.18652000 -0.04858900 0.24669000 2.00340000 -0.06259900 -0.02893600 </pose>
+<inertial>
+<mass>0.500</mass>
+<inertia>
+<ixx>3.3333e-05</ixx>
+<iyy>4.3333e-04</iyy>
+<izz>4.3333e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link4_collision">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link4_visual">
+<geometry>
+<box>
+<size>0.100 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link5">
+<pose>0.29390000 -0.05005300 0.24985000 2.00250000 -0.00067302 -0.00036328 </pose>
+<inertial>
+<mass>0.575</mass>
+<inertia>
+<ixx>3.8333e-05</ixx>
+<iyy>6.5286e-04</iyy>
+<izz>6.5286e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link5_collision">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link5_visual">
+<geometry>
+<box>
+<size>0.115 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<link name="arm3link6">
+<pose>0.41140000 -0.05009600 0.24993000 -0.00004751 -0.00067302 -0.00036328 </pose>
+<inertial>
+<mass>0.600</mass>
+<inertia>
+<ixx>4.0000e-05</ixx>
+<iyy>7.4000e-04</iyy>
+<izz>7.4000e-04</izz>
+<ixy>0.0</ixy>
+<ixz>0.0</ixz>
+<iyz>0.0</iyz>
+</inertia>
+</inertial>
+<collision name="arm3link6_collision">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+</collision>
+<visual name="arm3link6_visual">
+<geometry>
+<box>
+<size>0.120 0.02 0.02</size>
+</box>
+</geometry>
+<material>
+<color rgba="0.3 0.3 0.3 1.0"/>
+</material>
+</visual>
+</link>
+<joint name="arm1_jointgrip" type="fixed">
+<pose>0 0 0 0 0 0</pose>
+<parent>world</parent>
+<child>arm1link6</child>
+</joint>
+<joint name="arm1_joint1" type="revolute">
+<pose>0 0 0 0 0 0</pose>
+<parent>linkROV</parent>
+<child>arm1link1</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm1_joint2" type="revolute">
+<pose>-0.07 0 0 0 0 0</pose>
+<parent>arm1link1</parent>
+<child>arm1link2</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm1_joint3" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm1link2</parent>
+<child>arm1link3</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm1_joint4" type="revolute">
+<pose>-0.05 0 0 0 0 0</pose>
+<parent>arm1link3</parent>
+<child>arm1link4</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm1_joint5" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm1link4</parent>
+<child>arm1link5</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm1_joint6" type="revolute">
+<pose>-0.06 0 0 0 0 0</pose>
+<parent>arm1link5</parent>
+<child>arm1link6</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_jointgrip" type="fixed">
+<pose>0 0 0 0 0 0</pose>
+<parent>world</parent>
+<child>arm2link6</child>
+</joint>
+<joint name="arm2_joint1" type="revolute">
+<pose>0 0 0 0 0 0</pose>
+<parent>linkROV</parent>
+<child>arm2link1</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_joint2" type="revolute">
+<pose>-0.07 0 0 0 0 0</pose>
+<parent>arm2link1</parent>
+<child>arm2link2</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_joint3" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm2link2</parent>
+<child>arm2link3</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_joint4" type="revolute">
+<pose>-0.05 0 0 0 0 0</pose>
+<parent>arm2link3</parent>
+<child>arm2link4</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_joint5" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm2link4</parent>
+<child>arm2link5</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm2_joint6" type="revolute">
+<pose>-0.06 0 0 0 0 0</pose>
+<parent>arm2link5</parent>
+<child>arm2link6</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_jointgrip" type="fixed">
+<pose>0 0 0 0 0 0</pose>
+<parent>world</parent>
+<child>arm3link6</child>
+</joint>
+<joint name="arm3_joint1" type="revolute">
+<pose>0 0 0 0 0 0</pose>
+<parent>linkROV</parent>
+<child>arm3link1</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_joint2" type="revolute">
+<pose>-0.07 0 0 0 0 0</pose>
+<parent>arm3link1</parent>
+<child>arm3link2</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_joint3" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm3link2</parent>
+<child>arm3link3</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_joint4" type="revolute">
+<pose>-0.05 0 0 0 0 0</pose>
+<parent>arm3link3</parent>
+<child>arm3link4</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_joint5" type="revolute">
+<pose>-0.0575 0 0 0 0 0</pose>
+<parent>arm3link4</parent>
+<child>arm3link5</child>
+<axis>
+<xyz>0 0 1</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+<joint name="arm3_joint6" type="revolute">
+<pose>-0.06 0 0 0 0 0</pose>
+<parent>arm3link5</parent>
+<child>arm3link6</child>
+<axis>
+<xyz>1 0 0</xyz>
+<dynamics>
+<damping>0.05</damping>
+<friction>0</friction>
+<spring_reference>0</spring_reference>
+<spring_stiffness>10.0</spring_stiffness>
+</dynamics>
+</axis>
+</joint>
+</model>
+</sdf>

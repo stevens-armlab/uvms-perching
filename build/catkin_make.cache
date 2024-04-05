@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/jsitler/catkin_workspace/uuv_ws/src/uvms-perching/devel -DCMAKE_INSTALL_PREFIX=/home/jsitler/catkin_workspace/uuv_ws/src/uvms-perching/install -G Unix Makefiles

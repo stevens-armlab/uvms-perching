@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jsitler/catkin_workspace/uuv_ws/src/uvms-perching/devel/setup.sh
