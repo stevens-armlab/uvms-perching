@@ -2,8 +2,11 @@
 
 import rospy
 from std_msgs.msg import Bool
-from gazebo_msgs.msg import LinkState, LinkStates
-from gazebo_msgs.srv import GetLinkState
+from geometry_msgs.msg import Pose, Point, Quaternion
+from nav_msgs.msg import Odometry
+from sensor_msgs.msg import JointState
+# from gazebo_msgs.msg import LinkState, LinkStates
+# from gazebo_msgs.srv import GetLinkState
 from scipy.spatial.transform import Rotation as R
 import numpy as np
 from scipy import stats
@@ -30,29 +33,25 @@ t = np.zeros(N)
 
 pub1 = rospy.Publisher('perch_stable', Bool, queue_size=1)
 
+qL = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+qR = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+
 def sub1_cb(msg):
 	global pose_x, pose_y, pose_z, values_x, values_y, values_z
 	global ang_x, ang_y, ang_z, values_ax, values_ay, values_az
 	global t
 
-	poses = msg.pose
-	pose_x = poses[0].position.x
-	pose_y = poses[0].position.y
-	pose_z = poses[0].position.z
+	pos = msg.pose.pose.position
+	ang = msg.pose.pose.orientation
+	pose_x = pos.x
+	pose_y = pos.y
+	pose_z = pos.z
 
-	x = poses[0].orientation.x
-	y = poses[0].orientation.y
-	z = poses[0].orientation.z
-	w = poses[0].orientation.w
-
-	# rotmat = R.as_dcm(R.from_quat([x, y, z, w]))
-	# theta = np.arccos((np.trace(rotmat)-1)/2)
-	# m = 1/(2*np.sin(theta))*np.array([\
-	# 	rotmat[2,1] - rotmat[1,2],\
-	# 	rotmat[0,2] - rotmat[2,0],\
-	# 	rotmat[1,0] - rotmat[0,1]])
-	# rotvec = theta*m
-	# print(rotvec)
+	x = ang.x
+	y = ang.y
+	z = ang.z
+	w = ang.w
 	rotvec = R.as_rotvec(R.from_quat([x, y, z, w]))
 
 	ang_x = rotvec[0]
@@ -76,10 +75,30 @@ def sub1_cb(msg):
 	# print("")
 
 
+
+def sub2_cb(msg):
+	global qL, qR
+	qL[0] = msg.position[1]
+	qL[1] = msg.position[2]
+	qL[2] = msg.position[3]
+	qL[3] = msg.position[4]
+	qL[4] = msg.position[5]
+	qL[5] = msg.position[6]
+
+	qR[0] = msg.position[12]
+	qR[1] = msg.position[13]
+	qR[2] = msg.position[14]
+	qR[3] = msg.position[15]
+	qR[4] = msg.position[16]
+	qR[5] = msg.position[17]
+
+
+
 def avg_window():
 	global values_x, values_y, values_z
 	global values_ax, values_ay, values_az
 	global t
+	global qL, qR
 
 	avg_x = np.average(values_x)
 	avg_y = np.average(values_y)
@@ -87,12 +106,6 @@ def avg_window():
 	avg_ax = np.average(values_ax)
 	avg_ay = np.average(values_ay)
 	avg_az = np.average(values_az)
-
-	# x = list(range(0, N))
-	# print(x)
-	# print(x[1:N])
-	# print(np.append(x[1:N], 100))
-	# print("")
 
 	print("Avg X: " + str(avg_x))
 	print("Avg Y: " + str(avg_y))
@@ -103,9 +116,6 @@ def avg_window():
 	print("Avg Ang Y: " + str(avg_ay))
 	print("Avg Ang Z: " + str(avg_az))
 	print("")
-
-	# print("T: " + str(t))
-	# print("")
 
 	slope_x, i, r, p, ste = stats.linregress(t, values_x)
 	slope_y, i, r, p, ste = stats.linregress(t, values_y)
@@ -140,17 +150,26 @@ def avg_window():
 	print("================================")
 	print("")
 
-	time.sleep(0.1)
+	print("Joint Values: ")
+	print("QL: " + str(qL))
+	print("QR: " + str(qR))
+	print("")
+
+	print("================================")
+	print("")
+
+	# time.sleep(0.1)
 
 
 
 if __name__ == '__main__':
 
 	# Initialize the node
-	rospy.init_node("link_poses")
+	rospy.init_node("rexrov_poses")
 
 	# Initialize the subscribers
-	sub1 = rospy.Subscriber("/gazebo/link_states", LinkStates, callback=sub1_cb)
+	sub1 = rospy.Subscriber("/rexrov/pose_gt", Odometry, callback=sub1_cb)
+	sub2 = rospy.Subscriber("rexrov/joint_states", JointState, callback=sub2_cb)
 
 	rate = rospy.Rate(100)
 

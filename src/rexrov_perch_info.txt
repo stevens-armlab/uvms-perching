@@ -1,0 +1,115 @@
+Spawn world:
+roslaunch uuv_gazebo_worlds empty_underwater_world.launch
+Change Physics > Gravity > Z to 0
+
+
+(Optional) create perch structure:
+rosrun gazebo_ros spawn_model -file ~/catkin_workspace/uuv_ws/src/uuv_gazebo_simulation/rexrov_dual_oberon/rexrov_dual_oberon_description/objects/perch_structure/perch_structure.urdf -urdf -model structure -z -98
+
+
+Spawn vehicle, set to kinematic:
+- roslaunch rexrov_dual_oberon_description upload_rexrov_lite.launch z:=-1
+- rexrov::base_link > kinematic > true
+
+
+(If necessary) Set vehicle pose, set twist to 0
+- rosservice call /gazebo/set_model_state "model_state:
+  model_name: 'rexrov'
+  pose:
+    position:
+      x: 0.0
+      y: 0.0
+      z: -1.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  twist:
+    linear:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  reference_frame: ''" 
+
+
+Launch joint position PID controller: 
+- roslaunch rexrov_dual_oberon_control manipulator_joint_control_lite.launch
+
+
+Launch joint desired position publisher, which will generate a smooth polynomial from initial config to home config (all zeros):
+- rosrun rexrov_dual_oberon_control manipulator_publisher_V2.py
+
+
+Set desired joint poses using smooth polynomial. Edit file to change desired pose:
+- rosrun haptic_control joint_control_smooth.py
+
+
+Calculate resulting end effector pose in MATLAB from desired joint config:
+- [EE1, EE2] = forkin_oberon(qdes, auv_pos, auv_rot)
+
+
+Set the end effector links to kinematic, and make the vehicle not kinematic:
+- rexrov::oberon_L/end_effector > kinematic > true
+- rexrov::oberon_R/end_effector > kinematic > true
+- rexrov::base_link > kinematic > false
+
+
+Set end effector pose, set twist to zero. Replace pose with calculated end effector pose
+- rosservice call /gazebo/set_link_state "link_state:
+  link_name: 'rexrov::oberon_L/end_effector'
+  pose:
+    position: 
+      x: XXXXXXXXXXX
+      y: XXXXXXXXXXX
+      z: XXXXXXXXXXX
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  twist:
+    linear:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  reference_frame: ''" 
+
+- rosservice call /gazebo/set_link_state "link_state:
+  link_name: 'rexrov::oberon_R/end_effector'
+  pose:
+    position:
+      x: XXXXXXXXXXX
+      y: XXXXXXXXXXX
+      z: XXXXXXXXXXX
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  twist:
+    linear:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  reference_frame: ''" 
+
+
+Measure and publish vehicle pose:
+- rosrun uvms-perching deflection_rexrov.py
+
+
+Apply force, creating a unique name for the configuration:
+- rosrun uvms-perching apply_force_rexrov.py
